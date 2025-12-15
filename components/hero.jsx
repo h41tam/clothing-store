@@ -21,34 +21,37 @@ export default function Hero() {
 
   return (
     <div className="pt-20 pb-8 bg-background">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center min-h-screen">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-20">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-12 items-center min-h-screen">
           {/* Left: Title & Description */}
-          <div className="flex flex-col justify-center space-y-8 order-2 lg:order-1 animate-fadeInUp">
+          <div className="flex flex-col justify-center space-y-8 order-2 lg:order-1 animate-fadeInUp lg:pr-12">
             <div>
-              <h1 className="text-5xl lg:text-6xl font-light tracking-tight mb-4 text-balance">
-                Timeless
+              <h1 className="text-5xl lg:text-6xl font-cinzel-decorative font-semibold tracking-tight mb-4 text-balance">
+                Wear <span className="text-primary">Fancy</span>
                 <br />
-                <span className="text-primary">Elegance</span>
+                With <span className="text-primary">Manal</span>
               </h1>
-              <p className="text-lg text-muted-foreground leading-relaxed">
-                Discover our curated collection of premium luxury clothing, crafted with meticulous attention to detail.
-                Each piece embodies sophistication and timeless style.
-              </p>
+              <div className="text-center hyphens-auto max-w-[29ch] lg:max-w-[36ch]">
+                <p className="font-ghrathe text-xl text-foreground/80">
+                  Welcome To Manal's Official Store.
+                  Where Fashion and Comfort Come Together.
+                  Style Your Pride.
+                </p>
+              </div>
             </div>
 
-            <div className="flex gap-4">
+            <div className="flex gap-4 font-cinzel-decorative font-bold text-sm lg:text-xl">
               <Link
                 href="/collection"
-                className="px-8 py-3 bg-primary text-primary-foreground hover:opacity-90 transition-opacity inline-block"
+                className="px-6 py-3 border border-foreground bg-background rounded-xl text-foreground hover:bg-primary hover:text-background hover:border-primary transition-colors duration-400 inline-block"
               >
-                Explore Collection
+                Our Collection
               </Link>
               <Link
                 href="/info"
-                className="px-8 py-3 border border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-colors inline-block"
+                className="px-6 py-3 border border-foreground bg-background rounded-xl text-foreground hover:bg-primary hover:text-background hover:border-primary transition-colors duration-400 inline-block"
               >
-                Learn More
+                Find Us
               </Link>
             </div>
           </div>
@@ -58,9 +61,8 @@ export default function Hero() {
             {bestSellers.map((product, index) => (
               <div
                 key={product.id}
-                className={`absolute inset-0 transition-opacity duration-1000 ${
-                  index === current ? "opacity-100" : "opacity-0"
-                }`}
+                className={`absolute inset-0 transition-opacity duration-1000 ${index === current ? "opacity-100" : "opacity-0"
+                  }`}
               >
                 <Image
                   src={product.image || "/placeholder.svg"}
@@ -69,6 +71,9 @@ export default function Hero() {
                   className="object-cover"
                   priority={index === 0}
                 />
+                <span className="absolute bottom-10 left-5 font-cinzel text-foreground text-lg font-medium">
+                  {product.name}
+                </span>
               </div>
             ))}
 
@@ -92,9 +97,8 @@ export default function Hero() {
                 <button
                   key={index}
                   onClick={() => setCurrent(index)}
-                  className={`w-2 h-2 rounded-full transition-colors ${
-                    index === current ? "bg-primary" : "bg-primary/30"
-                  }`}
+                  className={`w-2 h-2 rounded-full transition-colors ${index === current ? "bg-primary" : "bg-primary/30"
+                    }`}
                 />
               ))}
             </div>

@@ -39,6 +39,84 @@
   --sidebar-ring: #d4af37;
 }
 
+@layer utilities {
+  .font-cinzel {
+    font-family: var(--font-cinzel);
+  }
+
+  .font-cinzel-decorative {
+    font-family: var(--font-cinzel-decorative);
+  }
+
+  .font-angelwish {
+    font-family: var(--font-angelwish);
+  }
+
+  .font-ghrathe {
+    font-family: var(--font-ghrathe);
+  }
+
+  .font-graffiti-youth {
+    font-family: var(--font-graffiti-youth);
+  }
+
+  .font-heavitas {
+    font-family: var(--font-heavitas);
+  }
+
+  .font-kastroo {
+    font-family: var(--font-kastroo);
+  }
+
+  .font-karina {
+    font-family: var(--font-karina);
+  }
+
+  .font-minecraft {
+    font-family: var(--font-minecraft);
+  }
+
+  .font-stormlight {
+    font-family: var(--font-stormlight);
+  }
+
+  .font-supercrawler {
+    font-family: var(--font-supercrawler);
+  }
+
+  .font-boston-caps {
+    font-family: var(--font-boston-caps);
+  }
+
+  .font-docallisme {
+    font-family: var(--font-docallisme);
+  }
+
+  .font-ds-digi {
+    font-family: var(--font-ds-digi);
+  }
+
+  .font-rodfat {
+    font-family: var(--font-rodfat);
+  }
+
+  .font-techno-hideo {
+    font-family: var(--font-techno-hideo);
+  }
+
+  .text-justify {
+    text-align: justify;
+  }
+
+  .text-justify-last {
+    text-align-last: justify;
+  }
+
+  .hyphens-auto {
+    hyphens: auto;
+  }
+}
+
 .dark {
   --background: oklch(0.145 0 0);
   --foreground: oklch(0.985 0 0);
@@ -191,9 +269,6 @@
   }
 
   /* Button animations */
-  button:hover:not(:disabled) {
-    @apply transform -translate-y-0.5;
-  }
 
   /* Glow effect on focus */
   input:focus,
