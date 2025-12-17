@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react"
 import Image from "next/image"
 import Link from "next/link"
-import { ChevronLeft, ChevronRight } from "lucide-react"
+import { CaretLeft, CaretRight } from "@phosphor-icons/react"
 import { bestSellers } from "@/lib/products"
 
 export default function Hero() {
@@ -21,43 +21,41 @@ export default function Hero() {
 
   return (
     <div className="pt-20 pb-8 bg-background">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-20">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-12 items-center min-h-screen">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-22">
+        <div className="grid grid-cols-1 lg:grid-cols-2 mt-10 lg:-mt-10 gap-6 lg:gap-12 items-center min-h-screen">
           {/* Left: Title & Description */}
-          <div className="flex flex-col justify-center space-y-8 order-2 lg:order-1 animate-fadeInUp lg:pr-12">
+          <div className="flex flex-col justify-center space-y-8 order-1 lg:order-1 animate-fadeInUp lg:pr-12">
             <div>
-              <h1 className="text-5xl lg:text-6xl font-cinzel-decorative font-semibold tracking-tight mb-4 text-balance">
-                Wear <span className="text-primary">Fancy</span>
-                <br />
-                With <span className="text-primary">Manal</span>
-              </h1>
-              <div className="text-center hyphens-auto max-w-[29ch] lg:max-w-[36ch]">
-                <p className="font-ghrathe text-xl text-foreground/80">
-                  Welcome To Manal's Official Store.
-                  Where Fashion and Comfort Come Together.
-                  Style Your Pride.
+              <div className="max-w-[40ch] lg:max-w-[36ch]">
+                <h1 className="text-4xl lg:text-4xl font-cinzel-decorative font-semibold tracking-tight mb-4 text-center">
+                  Bienvenue Chez
+                  <br />
+                  <span className="text-primary lg:text-6xl">numberONE</span>
+                </h1>
+                <p className="text-center font-light font-rodfat text-2sm text-foreground/80">
+                  Trouvez votre style prefere parmi notre vaste collection de vetements.
                 </p>
               </div>
             </div>
 
-            <div className="flex gap-4 font-cinzel-decorative font-bold text-sm lg:text-xl">
+            <div className="flex gap-4 font-cinzel-decorative ml-8 lg:ml-2 font-bold max-w-[41ch] lg:max-w-[34ch] text-sm lg:text-lg">
               <Link
                 href="/collection"
-                className="px-6 py-3 border border-foreground bg-background rounded-xl text-foreground hover:bg-primary hover:text-background hover:border-primary transition-colors duration-400 inline-block"
+                className="px-6 py-3 border border-foreground/80 bg-background rounded-xl text-foreground/80 hover:bg-primary hover:text-background hover:border-primary transition-colors duration-400 inline-block"
               >
-                Our Collection
+                Collection
               </Link>
               <Link
                 href="/info"
-                className="px-6 py-3 border border-foreground bg-background rounded-xl text-foreground hover:bg-primary hover:text-background hover:border-primary transition-colors duration-400 inline-block"
+                className="px-6 py-3 border border-foreground/80 bg-background rounded-xl text-foreground/80 hover:bg-primary hover:text-background hover:border-primary transition-colors duration-400 inline-block"
               >
-                Find Us
+                En Savoir Plus
               </Link>
             </div>
           </div>
 
           {/* Right: Slideshow */}
-          <div className="relative h-96 lg:h-full min-h-screen rounded-lg overflow-hidden group order-1 lg:order-2">
+          <div className="relative h-10 lg:h-12 min-h-100 rounded-lg animate-fadeInUp overflow-hidden group order-2 lg:order-1">
             {bestSellers.map((product, index) => (
               <div
                 key={product.id}
@@ -82,13 +80,13 @@ export default function Hero() {
               onClick={prev}
               className="absolute left-4 top-1/2 -translate-y-1/2 bg-primary/20 hover:bg-primary/40 text-primary p-2 rounded-full transition-colors z-10"
             >
-              <ChevronLeft size={24} />
+              <CaretLeft size={24} className="hover:cursor-pointer" />
             </button>
             <button
               onClick={next}
               className="absolute right-4 top-1/2 -translate-y-1/2 bg-primary/20 hover:bg-primary/40 text-primary p-2 rounded-full transition-colors z-10"
             >
-              <ChevronRight size={24} />
+              <CaretRight size={24} className="hover:cursor-pointer" />
             </button>
 
             {/* Indicators */}

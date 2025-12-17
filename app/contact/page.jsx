@@ -31,9 +31,9 @@ export default function ContactPage() {
     <div className="pt-20 pb-12 bg-background min-h-screen">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-20">
         <div className="mb-12 text-center">
-          <h1 className="text-5xl font-semibold font-cinzel-decorative tracking-tight mb-4">Get in Touch</h1>
+          <h1 className="text-5xl font-semibold font-cinzel-decorative tracking-tight mb-4">Contactez-Nous</h1>
           <p className="text-lg text-foreground/70 mx-auto font-ghrathe font-light max-w-2xl">
-            Have a question or business inquiry? We'd love to hear from you.
+            Avez-vous quelque chose a dire? Des questions a poser? Voici comment.
           </p>
         </div>
 
@@ -41,7 +41,7 @@ export default function ContactPage() {
           {/* Contact Info */}
           <div className="space-y-8">
             <div>
-              <h2 className="text-2xl text-primary font-cinzel font-semibold mb-6">Our Contact Information</h2>
+              <h2 className="text-2xl text-primary font-cinzel font-semibold mb-6">Nos Informations</h2>
 
               <div className="space-y-6">
                 <div className="flex gap-4">
@@ -52,14 +52,14 @@ export default function ContactPage() {
                       href="mailto:info@luxecollections.com"
                       className="text-foreground/70 font-ghrathe hover:text-primary duration-400 transition-colors"
                     >
-                      info@luxecollections.com
+                      numberone@store.com
                     </a>
                     <br />
                     <a
                       href="mailto:business@luxecollections.com"
                       className="text-foreground/70 font-ghrathe hover:text-primary duration-400 transition-colors"
                     >
-                      business@luxecollections.com
+                      support@numberone.com
                     </a>
                   </div>
                 </div>
@@ -67,9 +67,9 @@ export default function ContactPage() {
                 <div className="flex gap-4">
                   <PhoneCall className="text-foreground flex-shrink-0 mt-1" size={20} />
                   <div>
-                    <h3 className="font-light font-boston-caps mb-1">Phone</h3>
+                    <h3 className="font-light font-boston-caps mb-1">Telephone</h3>
                     <a href="tel:+212693772445" className="font-ghrathe text-foreground/70 hover:text-primary duration-400 transition-colors">
-                      +212 693 772-445
+                      +212 500 300-300
                     </a>
                   </div>
                 </div>
@@ -77,7 +77,7 @@ export default function ContactPage() {
                 <div className="flex gap-4">
                   <MapPinArea className="text-foreground flex-shrink-0 mt-1" size={20} />
                   <div>
-                    <h3 className="font-light font-boston-caps mb-1">Address</h3>
+                    <h3 className="font-light font-boston-caps mb-1">Addresse</h3>
                     <a href="https://maps.app.goo.gl/U81axV33EifsTBQ1A" className="text-foreground/70 font-ghrathe hover:text-primary transition-colors duration-400">5th Avenue, Suite 1000 New York, NY 10001</a>
                   </div>
                 </div>
@@ -85,18 +85,18 @@ export default function ContactPage() {
             </div>
 
             <div>
-              <h3 className="font-semibold text-primary text-2xl font-cinzel mb-6">Business Hours</h3>
+              <h3 className="font-semibold text-primary text-2xl font-cinzel mb-6">Heures De Travail</h3>
               <div className="space-y-2 font-ghrathe text-xl text-foreground/70">
-                <p><span className="text-foreground">Monday - Friday:</span> 9:00 AM - 6:00 PM EST</p>
-                <p><span className="text-foreground">Saturday:</span> 10:00 AM - 4:00 PM EST</p>
-                <p><span className="text-foreground">Sunday:</span> Closed</p>
+                <p><span className="text-foreground">Lundi - Vendredi:</span> 9:00 - 22:00</p>
+                <p><span className="text-foreground">Samedi:</span> 10:00 - 23:00</p>
+                <p><span className="text-foreground">Dimanche:</span> Ferme</p>
               </div>
             </div>
           </div>
 
           {/* Contact Form */}
           <div className="bg-secondary/40 rounded-4xl p-8 max-w-auto">
-            <h2 className="text-2xl font-cinzel font-semibold mb-6">Send us a Message</h2>
+            <h2 className="text-2xl font-cinzel font-semibold mb-6">E-mail Nous</h2>
 
             {submitted && (
               <div className="mb-6 p-4 font-cinzel font-semibold text-center bg-primary text-background rounded-xl animate-pulse">
@@ -106,7 +106,7 @@ export default function ContactPage() {
 
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
-                <label className="block text-md font-boston-caps font-medium -ml-2 mb-2">Name</label>
+                <label className="block text-md font-boston-caps font-medium -ml-2 mb-2">Nom</label>
                 <input
                   type="text"
                   name="name"
@@ -114,7 +114,7 @@ export default function ContactPage() {
                   onChange={handleChange}
                   required
                   className="font-boston-caps text-primary w-full bg-background rounded-xl px-4 py-1 focus:outline-none"
-                  placeholder="Your name"
+                  placeholder="votre Nom"
                 />
               </div>
 
@@ -127,12 +127,12 @@ export default function ContactPage() {
                   onChange={handleChange}
                   required
                   className="font-boston-caps text-primary w-full bg-background rounded-xl px-4 py-1 focus:outline-none"
-                  placeholder="your@email.com"
+                  placeholder="votre@email.com"
                 />
               </div>
 
               <div>
-                <label className="block text-md font-boston-caps font-medium -ml-2 mb-2">Subject</label>
+                <label className="block text-md font-boston-caps font-medium -ml-2 mb-2">Sujet</label>
                 <input
                   type="text"
                   name="subject"
@@ -140,7 +140,7 @@ export default function ContactPage() {
                   onChange={handleChange}
                   required
                   className="font-boston-caps text-primary w-full bg-background rounded-xl px-4 py-1 focus:outline-none"
-                  placeholder="Inquiry subject"
+                  placeholder="sujet"
                 />
               </div>
 
@@ -153,7 +153,7 @@ export default function ContactPage() {
                   required
                   rows="6"
                   className="font-boston-caps text-primary w-full bg-background rounded-xl px-4 py-1 focus:outline-none resize-none"
-                  placeholder="Your message..."
+                  placeholder="votre message..."
                 />
               </div>
 
@@ -161,7 +161,7 @@ export default function ContactPage() {
                 type="submit"
                 className="w-full bg-background border border-foreground text-foreground py-2 rounded-xl hover:bg-primary hover:border-primary hover:text-background transition-colors duration-400 font-cinzel-decorative font-semibold"
               >
-                Send Message
+                Envoyer
               </button>
             </form>
           </div>

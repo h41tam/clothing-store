@@ -3,9 +3,8 @@
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { useCart } from "@/lib/useCart"
-import { ShoppingBag, Menu, X } from "lucide-react"
 import { useState } from "react"
-import { Info, HouseLine, CoatHanger, Phone } from "@phosphor-icons/react"
+import { Info, HouseLine, CoatHanger, Phone, ShoppingCart, List, X } from "@phosphor-icons/react"
 
 export default function Navbar() {
   const pathname = usePathname()
@@ -13,7 +12,7 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
 
   const navLinks = [
-    { href: "/", label: "Home" },
+    { href: "/", label: "Acceuil" },
     { href: "/collection", label: "Collection" },
     { href: "/contact", label: "Contact" },
     { href: "/info", label: "Info" },
@@ -23,16 +22,15 @@ export default function Navbar() {
 
   return (
     <nav className="fixed top-0 w-full bg-background border-b border-border z-50 backdrop-blur-sm">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-20">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-20 mr-2">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link href="/" className="flex hover:scale-105 transition-transform duration-500 items-center gap-2 group">
-            <div className="w-10 h-10 bg-background rounded-sm flex items-center justify-center">
-              <span className="text-foreground group-hover:text-primary font-rodfat font-bold transition-colors duration-400 text-4xl">M</span>
+            <div className="w-8 h-10 bg-background rounded-sm flex items-center justify-center">
+              <span className="text-foreground group-hover:text-primary font-rodfat font-bold transition-colors duration-400 text-2xl">1</span>
             </div>
-            <span className="hidden sm:inline-block text-xl font-semibold font-kastroo tracking-wide leading-none text-foreground group-hover:text-primary transition-colors duration-400">
-              MANAL <br />
-              STORE
+            <span className="sm:inline-block -ml-4 text-2xl font-light font-rodfat tracking-wide leading-none text-foreground group-hover:text-primary transition-colors duration-400">
+              | Number One
             </span>
           </Link>
 
@@ -40,7 +38,7 @@ export default function Navbar() {
           <div className="hidden md:flex items-center gap-8">
             {navLinks.map((link) => {
               const Icon =
-                link.label === "Home" ? HouseLine :
+                link.label === "Acceuil" ? HouseLine :
                   link.label === "Collection" ? CoatHanger :
                     link.label === "Contact" ? Phone :
                       Info
@@ -63,9 +61,9 @@ export default function Navbar() {
           {/* Cart Icon and Mobile Menu Toggle */}
           <div className="flex items-center gap-4">
             <Link href="/cart" className="relative text-foreground hover:text-primary transition-colors">
-              <ShoppingBag size={24} />
+              <ShoppingCart size={24} />
               {cartCount > 0 && (
-                <span className="absolute -top-2 -right-2 bg-primary text-primary-foreground font-ghrathe w-5 h-5 rounded-full flex items-center justify-center text-xs font-light">
+                <span className="absolute -top-2 -right-2 bg-primary font-rodfat text-primary-foreground w-5 h-5 rounded-full flex items-center justify-center text-xs font-bold">
                   {cartCount}
                 </span>
               )}
@@ -73,7 +71,7 @@ export default function Navbar() {
 
             {/* Mobile Menu Button */}
             <button className="md:hidden text-foreground" onClick={() => setIsOpen(!isOpen)}>
-              {isOpen ? <X size={24} /> : <Menu size={24} />}
+              {isOpen ? <X size={24} /> : <List size={24} />}
             </button>
           </div>
         </div>

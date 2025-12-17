@@ -115,9 +115,9 @@ const technoHideo = localFont({
 })
 
 export const metadata = {
-  title: "Luxe Collections - Premium Clothing",
-  description: "Discover premium luxury clothing with timeless elegance",
-  generator: "v0.app",
+  title: "NumberOne",
+  description: "Number One In Clothing",
+  generator: "next.js",
   icons: {
     icon: [
       {

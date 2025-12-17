@@ -12,8 +12,8 @@ export default function FeaturedCollection() {
     <section className="py-16 bg-background">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-20">
         <div className="text-center mb-12">
-          <h2 className="text-4xl font-light font-cinzel-decorative tracking-tight mb-4">This Week's Theme</h2>
-          <p className="text-foreground/70 font-cinzel max-w-2xl mx-auto">Flex your style with our latest collection.</p>
+          <h2 className="text-4xl font-light font-cinzel-decorative tracking-tight mb-4">COlLecTioN De La SeMaInE</h2>
+          <p className="text-foreground/70 font-cinzel max-w-2xl mx-auto">Habillez-vous comme vous avais toujours reve.</p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
@@ -25,11 +25,10 @@ export default function FeaturedCollection() {
         <div className="text-center">
           <Link
             href="/collection"
-            className="group px-6 py-3 relative text-lg border rounded-xl border-foreground text-foreground hover:border-primary duration-300 transition-colors text-center hover:text-background font-cinzel-decorative font-semibold hover:bg-primary"
+            className="group px-6 py-3 relative text-lg rounded-xl border border-foreground/80 text-foreground/80 hover:border-primary duration-300 transition-colors text-center hover:text-background font-cinzel-decorative font-semibold hover:bg-primary"
           >
               <CoatHanger size={23} className="relative inline-block mr-3 mb-0.5" />
-            More
-            
+            Voir Plus
           </Link>
         </div>
       </div>
