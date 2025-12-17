@@ -1,4 +1,4 @@
-import clientPromise from "@/lib/mongodb"
+import getClientPromise from "@/lib/mongodb"
 import { NextResponse } from "next/server"
 
 export async function GET(request) {
@@ -8,7 +8,7 @@ export async function GET(request) {
     const category = url.searchParams.get("category") || ""
     const sex = url.searchParams.get("sex") || ""
     const limit = Number(url.searchParams.get("limit") || 20)
-    const client = await clientPromise
+    const client = await getClientPromise()
     const db = client.db()
     const query = {}
     if (q) query.name = { $regex: q, $options: "i" }
@@ -24,7 +24,7 @@ export async function GET(request) {
 export async function POST(request) {
   try {
     const body = await request.json()
-    const client = await clientPromise
+    const client = await getClientPromise()
     const db = client.db()
     const res = await db.collection("products").insertOne(body)
     return NextResponse.json({ insertedId: res.insertedId }, { status: 201 })
